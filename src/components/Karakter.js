@@ -38,13 +38,15 @@ function Karakter(props) {
             <h3>{data.name}</h3>
           </AccordionHeader>
           <AccordionBody accordionId="1">
-            <li>{data.gender}</li>
-            <li>{data.height}</li>
-            <li>{data.mass}</li>
-            <li>{data.birth_year}</li>
-            <li>{data.eye_color}</li>
-            <li>{data.hair_color}</li>
-            <li>{data.skin_color}</li>
+            <ul type="none">
+              <li>{data.gender}</li>
+              <li>{data.height}</li>
+              <li>{data.mass}</li>
+              <li>{data.birth_year}</li>
+              <li>{data.eye_color}</li>
+              <li>{data.hair_color}</li>
+              <li>{data.skin_color}</li>
+            </ul>
           </AccordionBody>
         </AccordionItem>
       </Accordion>

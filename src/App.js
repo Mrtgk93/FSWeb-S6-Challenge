@@ -25,6 +25,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Star Wars Major Characters List </h1>
+
       <Karakter data={data[0]} />
       <Karakter data={data[1]} />
       <Karakter data={data[2]} />
