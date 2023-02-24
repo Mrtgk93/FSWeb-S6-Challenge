@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Karakter from "./components/Karakter";
-import { response } from "msw";
+import "./App.css";
 
 const App = () => {
   const [data, setData] = useState();
@@ -15,6 +15,10 @@ const App = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  function aramaYap(e) {
+    setData(e.target.value);
+  }
+
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -25,17 +29,11 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Star Wars Major Characters List </h1>
+      <input type="text" placeholder="Arama" onChange={aramaYap}></input>
 
-      <Karakter data={data[0]} />
-      <Karakter data={data[1]} />
-      <Karakter data={data[2]} />
-      <Karakter data={data[3]} />
-      <Karakter data={data[4]} />
-      <Karakter data={data[5]} />
-      <Karakter data={data[6]} />
-      <Karakter data={data[7]} />
-      <Karakter data={data[8]} />
-      <Karakter data={data[9]} />
+      {data && data.map(item=>{
+        return <Karakter data={item}/>
+      })} 
     </div>
   );
 };
